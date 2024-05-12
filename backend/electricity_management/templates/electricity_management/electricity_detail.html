@@ -1,0 +1,21 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    
+<p>
+    <a class="btn btn-light" href="{% url 'electricity_management_Electricity_list' %}">
+    Electricity Listing
+    </a>
+</p>
+    
+<table class="table">
+    <tr><td>date</td><td>{{ object.date }}</td></tr>
+    <tr><td>amount</td><td>{{ object.amount }}</td></tr>
+    <tr><td>last_updated</td><td>{{ object.last_updated }}</td></tr>
+    <tr><td>created</td><td>{{ object.created }}</td></tr>
+    <tr><td>unit</td><td>{{ object.unit }}</td></tr>
+</table>
+<a class="btn btn-primary" href="{{object.get_update_url}}">Edit</a>
+
+{% endblock %}
