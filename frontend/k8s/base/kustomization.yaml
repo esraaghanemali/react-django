@@ -1,0 +1,13 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+configMapGenerator:
+  - envs:
+      - config.env
+    name: ${SERVICE_NAME}
+generatorOptions:
+  disableNameSuffixHash: true
+kind: Kustomization
+namespace: ${NAMESPACE}
+patches:
+  - path: k8s-virtualservice.yaml
+resources:
+  - ../../../infrastructure/kustomize/ui/
