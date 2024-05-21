@@ -17,4 +17,8 @@ export default defineConfig({
     environment: "jsdom",
     setupFiles: ["setupTests.ts"],
   },
+  preview: {
+    host: '0.0.0.0', // Bind to all interfaces
+    port: 4173, // Use the same port you exposed
+  }
 });
